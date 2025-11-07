@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { X, ShoppingCart, Heart, Calculator } from "lucide-react"
+import { X, ShoppingCart, Heart, Calculator, ChevronLeft, ChevronRight } from "lucide-react"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import type { CartItem } from "@/hooks/use-cart"
@@ -12,7 +12,7 @@ interface CarModalProps {
     name: string
     price: number
     year: number
-    image: string
+    images: string[]
     specs: {
       range: string
       power: string
@@ -45,6 +45,7 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
   const [selectedInterior, setSelectedInterior] = useState(interiorOptions[0])
   const [financingMonths, setFinancingMonths] = useState(60)
   const [isFavorite, setIsFavorite] = useState(false)
+  const [imageIndex, setImageIndex] = useState(0)
 
   const interiorUpcharge = selectedInterior.price
   const totalPrice = car.price + interiorUpcharge
@@ -56,7 +57,7 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
       name: car.name,
       price: car.price,
       year: car.year,
-      image: car.image,
+      image: car.images?.[imageIndex] ?? car.images?.[0] ?? "/placeholder.svg",
       color: selectedColor,
       interior: selectedInterior.name,
       interiorPrice: selectedInterior.price,
@@ -93,8 +94,28 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
         {/* Content */}
         <div className="p-6 space-y-6">
           {/* Image */}
-          <div className="rounded-lg overflow-hidden bg-gradient-to-br from-purple-900/20 to-pink-900/20 h-64">
-            <img src={car.image || "/placeholder.svg"} alt={car.name} className="w-full h-full object-cover" />
+          <div className="rounded-lg overflow-hidden bg-gradient-to-br from-purple-900/20 to-pink-900/20 h-96 relative">
+            {car.images && car.images.length > 1 && (
+              <button
+                onClick={() => setImageIndex((i) => (i - 1 + car.images.length) % car.images.length)}
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-black/40 p-2 rounded-full text-white"
+                aria-label="previous image"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+            )}
+
+            <img src={car.images?.[imageIndex] ?? car.images?.[0] ?? "/placeholder.svg"} alt={car.name} className="w-full h-full object-cover" />
+
+            {car.images && car.images.length > 1 && (
+              <button
+                onClick={() => setImageIndex((i) => (i + 1) % car.images.length)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/40 p-2 rounded-full text-white"
+                aria-label="next image"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            )}
           </div>
 
           {/* Price and Year */}
