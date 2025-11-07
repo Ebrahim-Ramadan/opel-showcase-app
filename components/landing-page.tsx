@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight, Zap, Star, Gauge, Leaf } from "lucide-react"
+import { ChevronLeft, ChevronRight, Zap, Star, Gauge, Leaf, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const featuredCars = [
@@ -379,6 +379,16 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
           </div>
         </div>
       </div>
+
+      {/* Fixed Floating Contact Button */}
+      <a
+        href="tel:+201010381150"
+        className="fixed bottom-8 left-8 z-40 w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 flex items-center justify-center shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-110 glow-pulse"
+        aria-label="Call us"
+        title="Call us: +20 101 038 1150"
+      >
+        <Phone className="w-8 h-8 text-white" />
+      </a>
     </div>
   )
 }
