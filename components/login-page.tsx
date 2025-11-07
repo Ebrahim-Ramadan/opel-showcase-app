@@ -74,13 +74,13 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
             </div>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-purple-500/20">
+          {/* <div className="mt-6 pt-6 border-t border-purple-500/20">
             <p className="text-center text-sm text-gray-400">
               Demo Credentials:
               <br />
               <span className="text-purple-300 font-mono">opel / password</span>
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

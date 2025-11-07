@@ -64,7 +64,11 @@ const testimonials = [
   },
 ]
 
-export default function LandingPage() {
+interface LandingPageProps {
+  setCurrentPage?: (page: string) => void
+}
+
+export default function LandingPage({ setCurrentPage }: LandingPageProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoplay, setIsAutoplay] = useState(true)
 
@@ -128,12 +132,17 @@ export default function LandingPage() {
 
                   <div className="flex gap-6 justify-center items-center pt-4">
                     <div>
-                      <p className="text-gray-400 text-sm">Starting from</p>
+                      <p className="text-gray-200 text-sm">Starting from</p>
                       <p className="text-4xl font-bold text-transparent bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text">
                         ${(car.price / 1000).toFixed(0)}K
                       </p>
                     </div>
-                    <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-purple-500/50 transition-all">
+                    <Button
+                      onClick={() => {
+                        setCurrentPage?.("cars")
+                      }}
+                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-purple-500/50 transition-transform transform-gpu hover:scale-105"
+                    >
                       Explore
                     </Button>
                   </div>
