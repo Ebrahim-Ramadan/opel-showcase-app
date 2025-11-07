@@ -28,7 +28,7 @@ const featuredCars = [
     name: "Opel Mokka E",
     year: 2024,
     price: 38000,
-    image: "/Opel Mokka E.webp",
+    image: "/Opel Mokka E 1.jpg",
     badge: "POPULAR",
     spec: "500km Range",
   },
@@ -189,6 +189,59 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
         </div>
       </div>
 
+
+
+
+
+
+
+
+
+{/* Featured Videos Section */}
+        <div className="my-8">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+              Experience Grandland
+            </span>
+          </h2>
+
+         <div className="relative rounded-lg overflow-hidden bg-slate-800/50 ">
+              <div className="aspect-square overflow-hidden bg-black">
+                <video
+                  src="/opel_grandland_how-it-feels-inside_1920x1920.mp4"
+                  controls = {false}
+                  loop
+                  autoPlay
+                  muted
+                  className="w-full h-full object-cover"
+                  poster="/Opel Grandland.jpg"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="absolute top-0 left-0 right-4 bg-gradient-to-b from-black/50 to-transparent px-4 py-12 w-full inline-block w-fit">
+                <p className="text-white font-bold text-4xl md:text-6xl">How It Feels Inside</p>
+                <p className="text-purple-100 font-semibold text-xl md:text-3xl">Luxury meets comfort</p>
+              </div>
+            </div>
+          {/* <div className="relative rounded-lg overflow-hidden bg-slate-800/50  ">
+              <div className="aspect-square overflow-hidden bg-black">
+                <video
+                  src="/opel_grandland_how-it feels-to-drive_1920x1920.mp4"
+                  controls
+                  className="w-full h-full object-cover"
+                  poster="/Opel Grandland.jpg"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="absolute top-4 left-4 right-4 bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 rounded-lg inline-block w-fit">
+                <p className="text-white font-bold text-lg">How It Feels to Drive</p>
+                <p className="text-purple-100 text-sm">Experience pure performance</p>
+              </div>
+            </div> */}
+
+        </div>
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 py-20">
         <h2 className="text-4xl font-bold text-center mb-12">
@@ -207,7 +260,7 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
             return (
               <div
                 key={idx}
-                className="p-6 rounded-lg bg-slate-800/50 border border-purple-500/20 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/20 glow-pulse"
+                className="p-6 rounded-lg bg-slate-800/50  transition-all hover:shadow-lg hover:shadow-purple-500/20 glow-pulse"
               >
                 <Icon className="w-8 h-8 text-purple-400 mb-3" />
                 <h3 className="text-xl font-bold text-transparent bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text mb-2">
@@ -218,7 +271,7 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
             )
           })}
         </div>
-
+     
         {/* Testimonials Section */}
         <div className="mb-20">
           <h2 className="text-4xl font-bold text-center mb-12">
@@ -276,8 +329,10 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
           </div>
         </div>
 
+   
+
         {/* Call-to-Action Section */}
-        <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 border border-purple-500/30 rounded-lg p-12 text-center">
+        <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-lg p-12 text-center">
           <h3 className="text-3xl font-bold text-white mb-4">Ready to Drive Excellence?</h3>
           <p className="text-gray-300 mb-8 text-lg">
             Explore our complete collection and find your perfect Opel today.
