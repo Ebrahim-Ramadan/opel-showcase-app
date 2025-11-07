@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { X, ShoppingCart, Heart, Calculator } from "lucide-react"
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import type { CartItem } from "@/hooks/use-cart"
 
@@ -62,6 +63,9 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
       totalPrice: totalPrice,
     }
     onAddToCart(cartItem)
+    // show a toast notification
+      toast.success(`${car.name} added to cart`)
+
     onClose()
   }
 
