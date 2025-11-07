@@ -491,9 +491,9 @@ export default function CheckoutPage() {
                 </div>
               </div>
 
-              <div className="text-xs text-gray-500 mt-4 p-3 bg-slate-700/30 rounded border border-slate-600/50">
+              {/* <div className="text-xs text-gray-500 mt-4 p-3 bg-slate-700/30 rounded border border-slate-600/50">
                 This is a demo checkout. No payment will be processed.
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
