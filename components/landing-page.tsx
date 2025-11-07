@@ -332,7 +332,7 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
    
 
         {/* Call-to-Action Section */}
-        <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-lg p-12 text-center">
+        <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-lg p-12 text-center mb-20">
           <h3 className="text-3xl font-bold text-white mb-4">Ready to Drive Excellence?</h3>
           <p className="text-gray-300 mb-8 text-lg">
             Explore our complete collection and find your perfect Opel today.
@@ -340,6 +340,43 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
           <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 text-lg rounded-lg shadow-lg hover:shadow-purple-500/50 transition-all">
             Browse Collection
           </Button>
+        </div>
+
+        {/* Contact Us Section */}
+        <div className="bg-slate-800/50 border border-purple-500/20 rounded-lg p-12 text-center">
+          <h2 className="text-4xl font-bold text-center mb-8">
+            <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+              Get in Touch
+            </span>
+          </h2>
+          <div className="space-y-6">
+            <p className="text-gray-300 text-lg">
+              Have questions about our vehicles? Our team is ready to help you find the perfect Opel.
+            </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-purple-600/30 border border-purple-500/50 flex items-center justify-center">
+                  <span className="text-2xl text-purple-300">📞</span>
+                </div>
+                <div className="text-left">
+                  <p className="text-gray-400 text-sm">Call us now</p>
+                  <a href="tel:+201010381150" className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text hover:from-purple-200 hover:to-pink-200 transition-all">
+                    +20 101 038 1150
+                  </a>
+                </div>
+              </div>
+              <div className="hidden md:block w-px h-12 bg-purple-500/20" />
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-purple-600/30 border border-purple-500/50 flex items-center justify-center">
+                  <span className="text-2xl text-purple-300">🕐</span>
+                </div>
+                <div className="text-left">
+                  <p className="text-gray-400 text-sm">Hours</p>
+                  <p className="text-lg font-semibold text-white">Mon - Fri: 9AM - 6PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
