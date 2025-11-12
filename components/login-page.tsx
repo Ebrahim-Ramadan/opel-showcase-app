@@ -34,19 +34,19 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
               OPEL
             </div>
           </div>
-          <p className="text-gray-400 text-sm tracking-widest">PREMIUM MOTORS</p>
+          <p className="text-gray-400 text-sm tracking-widest">محركات فاخرة</p>
         </div>
 
         {/* Login Card */}
         <div className="bg-slate-900/80 border border-purple-500/20 rounded-lg p-8 backdrop-blur-sm shadow-2xl glow-pulse">
-          <h2 className="text-2xl font-bold text-white mb-6 text-center">Welcome Back</h2>
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">أهلا بعودتك</h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <label className="text-sm text-gray-300">Username</label>
+              <label className="text-sm text-gray-300">اسم المستخدم</label>
               <Input
                 type="text"
-                placeholder="opel"
+                placeholder="أوبل"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="bg-slate-800 border-purple-500/30 text-white placeholder:text-gray-500 focus:border-purple-400 focus:ring-purple-400/50"
@@ -54,10 +54,10 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm text-gray-300">Password</label>
+              <label className="text-sm text-gray-300">كلمة المرور</label>
               <Input
                 type="password"
-                placeholder="password"
+                placeholder="كلمة المرور"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="bg-slate-800 border-purple-500/30 text-white placeholder:text-gray-500 focus:border-purple-400 focus:ring-purple-400/50"
@@ -69,7 +69,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                 type="submit"
                 className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/50"
               >
-                Sign In
+                تسجيل الدخول
               </Button>
             </div>
           </form>
