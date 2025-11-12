@@ -183,10 +183,10 @@ export default function CarsPage() {
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">
             <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
-              Browse Our Collection
+              تصفح مجموعتنا
             </span>
           </h1>
-          <p className="text-gray-400">Discover your perfect Opel</p>
+          <p className="text-gray-400">اكتشف أوبل المثالية لك</p>
         </div>
 
         {/* Search and Filters */}
@@ -194,12 +194,12 @@ export default function CarsPage() {
           <div className="flex flex-col md:flex-row gap-4 items-end">
             {/* Search */}
             <div className="flex-1">
-              <label className="text-sm text-gray-400 mb-2 block">Search</label>
+              <label className="text-sm text-gray-400 mb-2 block">بحث</label>
               <div className="relative">
                 <Search className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                 <Input
                   type="text"
-                  placeholder="Search cars..."
+                  placeholder="ابحث عن السيارات..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10 bg-slate-700 border-purple-500/30 text-white placeholder:text-gray-500"
@@ -209,16 +209,16 @@ export default function CarsPage() {
 
             {/* Sort Dropdown */}
             <div>
-              <label className="text-sm text-gray-400 mb-2 block">Sort by</label>
+              <label className="text-sm text-gray-400 mb-2 block">ترتيب حسب</label>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
                 className="px-4 py-2 bg-slate-700 border border-purple-500/30 rounded-lg text-white text-sm focus:border-purple-500 focus:outline-none cursor-pointer"
               >
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="performance">Best Performance</option>
-                <option value="name">Name: A to Z</option>
+                <option value="price-low">السعر: الأقل إلى الأعلى</option>
+                <option value="price-high">السعر: الأعلى إلى الأقل</option>
+                <option value="performance">أفضل أداء</option>
+                <option value="name">الاسم: أ إلى ي</option>
               </select>
             </div>
 
@@ -228,7 +228,7 @@ export default function CarsPage() {
               className="flex items-center gap-2 px-4 py-2 bg-purple-600/30 border border-purple-500/50 rounded-lg text-purple-300 hover:bg-purple-600/50 transition-all"
             >
               <Sliders className="w-4 h-4" />
-              Filters
+              تصفية
             </button>
           </div>
 
@@ -237,7 +237,7 @@ export default function CarsPage() {
             <div className="mt-6 pt-6 border-t border-purple-500/20 space-y-6">
               {/* Vehicle Type Filter */}
               <div>
-                <label className="text-sm text-gray-400 mb-3 block font-semibold">Vehicle Type</label>
+                <label className="text-sm text-gray-400 mb-3 block font-semibold">نوع السيارة</label>
                 <div className="flex flex-wrap gap-2">
                   <button
                     onClick={() => setSelectedType(null)}
@@ -247,7 +247,7 @@ export default function CarsPage() {
                         : "bg-slate-700 text-gray-400 border border-purple-500/20 hover:bg-slate-600"
                     }`}
                   >
-                    All Types
+                    جميع الأنواع
                   </button>
                   {vehicleTypes.map((type) => (
                     <button
@@ -268,7 +268,7 @@ export default function CarsPage() {
               {/* Price Range Filter */}
               <div>
                 <label className="text-sm text-gray-400 mb-3 block font-semibold">
-                  Price Range: ${(priceRange.min / 1000).toFixed(0)}K - ${(priceRange.max / 1000).toFixed(0)}K
+                  نطاق السعر: {(priceRange.min / 1000).toFixed(0)}ألف - {(priceRange.max / 1000).toFixed(0)}ألف ريال
                 </label>
                 <div className="space-y-3">
                   <input
@@ -306,7 +306,7 @@ export default function CarsPage() {
         {/* Results Count */}
         <div className="text-gray-400 mb-6 flex items-center justify-between">
           <span>
-            Showing {filteredCars.length} of {allCars.length} cars
+            عرض {filteredCars.length} من {allCars.length} سيارة
           </span>
           {/* Clear all filters */}
           {(searchTerm || priceRange.min !== 30000 || priceRange.max !== 80000 || selectedType) && (
@@ -318,7 +318,7 @@ export default function CarsPage() {
               }}
               className="text-purple-400 hover:text-purple-300 text-sm underline transition-colors"
             >
-              Clear all filters
+              مسح جميع التصفيات
             </button>
           )}
         </div>
@@ -382,7 +382,7 @@ export default function CarsPage() {
                     onClick={() => setSelectedCar(car)}
                     className="w-full mt-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg"
                   >
-                    View Details
+                    عرض التفاصيل
                   </Button>
                 </div>
               </button>
@@ -392,7 +392,7 @@ export default function CarsPage() {
 
         {filteredCars.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-400 text-lg">No cars found matching your criteria.</p>
+            <p className="text-gray-400 text-lg">لم يتم العثور على سيارات تطابق معاييرك.</p>
           </div>
         )}
       </div>

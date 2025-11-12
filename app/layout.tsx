@@ -9,8 +9,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Opel Motors - Premium Cars",
-  description: "Discover the latest Opel car models",
+  title: "أوبل موتورز - سيارات فاخرة",
+  description: "اكتشف أحدث طرازات سيارات أوبل",
   generator: "v0.app",
 }
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="ar" dir="rtl" className="dark">
       <body className={`font-sans antialiased`}>
         <Toaster position="bottom-right" richColors  />
         {children}

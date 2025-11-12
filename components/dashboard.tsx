@@ -52,7 +52,7 @@ export default function Dashboard({ currentPage, setCurrentPage, onLogout }: Das
                   : "text-gray-400 hover:text-gray-300"
               }`}
             >
-              Home
+              الرئيسية
             </button>
             <button
               onClick={() => setCurrentPage("cars")}
@@ -62,7 +62,7 @@ export default function Dashboard({ currentPage, setCurrentPage, onLogout }: Das
                   : "text-gray-400 hover:text-gray-300"
               }`}
             >
-               Cars
+               السيارات
             </button>
 
             {/* Cart Button */}
@@ -80,7 +80,7 @@ export default function Dashboard({ currentPage, setCurrentPage, onLogout }: Das
             </button>
 
             <Button onClick={onLogout} variant="ghost" className="text-gray-400 hover:text-red-400 hover:bg-red-500/10">
-              Logout
+              تسجيل الخروج
             </Button>
           </div>
         </div>

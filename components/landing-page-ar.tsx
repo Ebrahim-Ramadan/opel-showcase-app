@@ -189,66 +189,35 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-{/* Featured Videos Section */}
-        <div className="my-8">
+      {/* Featured Videos Section */}
+      <div className="max-w-7xl mx-auto px-4 py-20 my-8">
         <h2 className="text-4xl font-bold text-center mb-12">
           <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
-            اختبر جراند لاند
+            استكشف جراند لاند
           </span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="relative rounded-lg overflow-hidden bg-slate-800/50">
-            <div className="aspect-square overflow-hidden bg-black">
-              <video
-                src="/opel_grandland_how-it-feels-inside_1920x1920.mp4"
-                loop
-                autoPlay
-                muted
-                className="w-full h-full object-cover"
-                poster="/Opel Grandland.jpg"
-              >
-                متصفحك لا يدعم علامة الفيديو.
-              </video>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-              <div>
-                <p className="text-white font-bold text-3xl md:text-4xl">كيف تشعر بالداخل</p>
-                <p className="text-purple-100 font-semibold text-lg md:text-xl">الفخامة تلتقي بالراحة</p>
-              </div>
-            </div>
+        <div className="relative rounded-lg overflow-hidden bg-slate-800/50">
+          <div className="aspect-square overflow-hidden bg-black">
+            <video
+              src="/opel_grandland_how-it-feels-inside_1920x1920.mp4"
+              controls={false}
+              loop
+              autoPlay
+              muted
+              className="w-full h-full object-cover"
+              poster="/Opel Grandland.jpg"
+            >
+              متصفحك لا يدعم علامة الفيديو.
+            </video>
           </div>
-
-          <div className="relative rounded-lg overflow-hidden bg-slate-800/50">
-            <div className="aspect-square overflow-hidden bg-black">
-              <video
-                src="/opel_grandland_how-it-feels-to-drive_1920x1920.mp4"
-                loop
-                autoPlay
-                muted
-                className="w-full h-full object-cover"
-                poster="/Opel Grandland.jpg"
-              >
-                متصفحك لا يدعم علامة الفيديو.
-              </video>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-              <div>
-                <p className="text-white font-bold text-3xl md:text-4xl">كيف تشعر أثناء القيادة</p>
-                <p className="text-purple-100 font-semibold text-lg md:text-xl">أداء خالصة</p>
-              </div>
-            </div>
+          <div className="absolute top-0 left-0 right-4 bg-gradient-to-b from-black/50 to-transparent px-4 py-12 w-full inline-block w-fit">
+            <p className="text-white font-bold text-4xl md:text-6xl">كيف يشعر من الداخل</p>
+            <p className="text-purple-100 font-semibold text-xl md:text-3xl">الفخامة تلتقي الراحة</p>
           </div>
         </div>
       </div>
+
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 py-20">
         <h2 className="text-4xl font-bold text-center mb-12">
@@ -259,15 +228,15 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
 
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {[
-            { title: "تصميم فاخر", desc: "جماليات متطورة تلتقي براحة الفخامة", icon: Zap },
-            { title: "مستقبل كهربائي", desc: "أداء صديقة للبيئة بدون تنازل", icon: Leaf },
+            { title: "تصميم فاخر", desc: "جمالية متقدمة تلتقي براحة فاخرة", icon: Zap },
+            { title: "المستقبل الكهربائي", desc: "أداء صديق للبيئة بدون تنازلات", icon: Leaf },
             { title: "تكنولوجيا متقدمة", desc: "أحدث ميزات الذكاء الاصطناعي والقيادة الذاتية", icon: Gauge },
           ].map((feature, idx) => {
             const Icon = feature.icon
             return (
               <div
                 key={idx}
-                className="p-6 rounded-lg bg-slate-800/50 border border-purple-500/20 transition-all hover:shadow-lg hover:shadow-purple-500/20 glow-pulse"
+                className="p-6 rounded-lg bg-slate-800/50 transition-all hover:shadow-lg hover:shadow-purple-500/20 glow-pulse"
               >
                 <Icon className="w-8 h-8 text-purple-400 mb-3" />
                 <h3 className="text-xl font-bold text-transparent bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text mb-2">
@@ -283,7 +252,7 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
         <div className="mb-20">
           <h2 className="text-4xl font-bold text-center mb-12">
             <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
-              ماذا يقول عملاؤنا
+              ما يقول عملاؤنا
             </span>
           </h2>
 
@@ -318,10 +287,10 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { label: "أقصى سرعة", value: "250+ كم/س" },
-              { label: "من 0-100 كم/س", value: "4.2 ثانية" },
-              { label: "المدى الكهربائي", value: "900 كم" },
-              { label: "القوة الإنتاجية", value: "400+ كيلوواط" },
+              { label: "السرعة القصوى", value: "250+ كم/س" },
+              { label: "0-100 كم/س", value: "4.2 ثانية" },
+              { label: "مدى السير", value: "900 كم" },
+              { label: "قوة المحرك", value: "400+ كيلو وات" },
             ].map((spec, idx) => (
               <div
                 key={idx}
@@ -338,9 +307,9 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
 
         {/* Call-to-Action Section */}
         <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-lg p-12 text-center mb-20">
-          <h3 className="text-3xl font-bold text-white mb-4">هل أنت مستعد لقيادة التميز؟</h3>
+          <h3 className="text-3xl font-bold text-white mb-4">هل أنت مستعد للقيادة بتميز؟</h3>
           <p className="text-gray-300 mb-8 text-lg">
-            استكشف مجموعتنا الكاملة وابحث عن أوبل المثالية لك اليوم.
+            استكشف مجموعتنا الكاملة وجد أوبل المثالية لك اليوم.
           </p>
           <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 text-lg rounded-lg shadow-lg hover:shadow-purple-500/50 transition-all">
             تصفح المجموعة
@@ -363,8 +332,8 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
                 <div className="w-12 h-12 rounded-full bg-purple-600/30 border border-purple-500/50 flex items-center justify-center">
                   <span className="text-2xl text-purple-300">📞</span>
                 </div>
-                <div className="text-right">
-                  <p className="text-gray-400 text-sm">اتصل بنا الآن</p>
+                <div className="text-left">
+                  <p className="text-gray-400 text-sm">اتصل الآن</p>
                   <a href="tel:+201010381150" className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text hover:from-purple-200 hover:to-pink-200 transition-all">
                     +20 101 038 1150
                   </a>
@@ -375,9 +344,9 @@ export default function LandingPage({ setCurrentPage }: LandingPageProps) {
                 <div className="w-12 h-12 rounded-full bg-purple-600/30 border border-purple-500/50 flex items-center justify-center">
                   <span className="text-2xl text-purple-300">🕐</span>
                 </div>
-                <div className="text-right">
+                <div className="text-left">
                   <p className="text-gray-400 text-sm">ساعات العمل</p>
-                  <p className="text-lg font-semibold text-white">الاثنين - الجمعة: 9 صباحاً - 6 مساءً</p>
+                  <p className="text-lg font-semibold text-white">الاثنين - الجمعة: 9صباحاً - 6مساءً</p>
                 </div>
               </div>
             </div>

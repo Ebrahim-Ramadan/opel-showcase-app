@@ -65,7 +65,7 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
     }
     onAddToCart(cartItem)
     // show a toast notification
-      toast.success(`${car.name} added to cart`)
+      toast.success(`تم إضافة ${car.name} إلى السلة`)
 
     onClose()
   }
@@ -111,7 +111,7 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
               <button
                 onClick={() => setImageIndex((i) => (i + 1) % car.images.length)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/40 p-2 rounded-full text-white"
-                aria-label="next image"
+                aria-label="الصورة التالية"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -121,13 +121,13 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
           {/* Price and Year */}
           <div className="flex items-end justify-between">
             <div>
-              <p className="text-gray-400 text-sm mb-1">Starting from</p>
+              <p className="text-gray-400 text-sm mb-1">ابدأ من</p>
               <p className="text-4xl font-bold text-transparent bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text">
                 ${(car.price / 1000).toFixed(0)}K
               </p>
             </div>
             <div className="text-right">
-              <p className="text-gray-400 text-sm">Model Year</p>
+              <p className="text-gray-400 text-sm">سنة الموديل</p>
               <p className="text-2xl font-bold text-white">{car.year}</p>
             </div>
           </div>
@@ -138,11 +138,11 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
           {/* Specs Grid */}
           <div className="grid grid-cols-2 gap-4">
             {[
-              { label: "Power", value: car.specs.power },
-              { label: "Range", value: car.specs.range },
-              { label: "Acceleration", value: car.specs.acceleration },
-              { label: "Transmission", value: car.specs.transmission },
-              { label: "Seats", value: car.specs.seats.toString() },
+              { label: "القوة", value: car.specs.power },
+              { label: "المدى", value: car.specs.range },
+              { label: "التسارع", value: car.specs.acceleration },
+              { label: "ناقل الحركة", value: car.specs.transmission },
+              { label: "المقاعد", value: car.specs.seats.toString() },
             ].map((spec, idx) => (
               <div key={idx} className="p-4 bg-slate-700/50 border border-purple-500/20 rounded-lg">
                 <p className="text-gray-400 text-sm mb-1">{spec.label}</p>
@@ -153,24 +153,24 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
 
           {/* Features List */}
           <div className="bg-slate-700/30 border border-purple-500/20 rounded-lg p-4">
-            <h3 className="font-bold text-white mb-3">Premium Features</h3>
+            <h3 className="font-bold text-white mb-3">المميزات المميزة</h3>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li>✓ Premium LED lighting system</li>
-              <li>✓ Advanced AI driver assistance</li>
-              <li>✓ Panoramic sunroof</li>
-              <li>✓ Premium sound system</li>
-              <li>✓ Heated leather seats</li>
-              <li>✓ Wireless charging</li>
+              <li>✓ نظام الإضاءة LED المتقدم</li>
+              <li>✓ مساعدة السائق المتقدمة بالذكاء الاصطناعي</li>
+              <li>✓ سقف بانوراما</li>
+              <li>✓ نظام صوتي فاخر</li>
+              <li>✓ مقاعد جلد مدفأة</li>
+              <li>✓ شحن لاسلكي</li>
             </ul>
           </div>
 
           {/* Customization Options */}
           <div className="space-y-4 p-4 bg-slate-700/20 border border-purple-500/20 rounded-lg">
-            <h3 className="font-bold text-white text-lg">Customize Your Vehicle</h3>
+            <h3 className="font-bold text-white text-lg">خصص سيارتك</h3>
 
             {/* Color Selection */}
             <div>
-              <label className="text-sm text-gray-300 mb-3 block font-semibold">Exterior Color</label>
+              <label className="text-sm text-gray-300 mb-3 block font-semibold">لون الطلاء الخارجي</label>
               <div className="flex gap-3">
                 {colorOptions.map((color) => (
                   <button
@@ -194,7 +194,7 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
 
             {/* Interior Selection */}
             <div>
-              <label className="text-sm text-gray-300 mb-3 block font-semibold">Interior Package</label>
+              <label className="text-sm text-gray-300 mb-3 block font-semibold">حزمة الداخلية</label>
               <div className="space-y-2">
                 {interiorOptions.map((interior) => (
                   <button
@@ -222,11 +222,11 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
           <div className="space-y-4 p-4 bg-slate-700/20 border border-purple-500/20 rounded-lg">
             <div className="flex items-center gap-2 mb-4">
               <Calculator className="w-5 h-5 text-purple-400" />
-              <h3 className="font-bold text-white text-lg">Financing Options</h3>
+              <h3 className="font-bold text-white text-lg">خيارات التمويل</h3>
             </div>
 
             <div>
-              <label className="text-sm text-gray-300 mb-2 block">Loan Duration: {financingMonths} months</label>
+              <label className="text-sm text-gray-300 mb-2 block">مدة القرض: {financingMonths} شهر</label>
               <input
                 type="range"
                 min="24"
@@ -236,18 +236,18 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
                 className="w-full"
               />
               <div className="flex justify-between text-xs text-gray-400 mt-2">
-                <span>2 years</span>
-                <span>7 years</span>
+                <span>سنتان</span>
+                <span>7 سنوات</span>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-purple-500/20">
               <div className="bg-slate-700/50 rounded-lg p-3">
-                <p className="text-gray-400 text-xs mb-1">Total Price</p>
+                <p className="text-gray-400 text-xs mb-1">السعر الإجمالي</p>
                 <p className="text-xl font-bold text-white">${(totalPrice / 1000).toFixed(0)}K</p>
               </div>
               <div className="bg-purple-600/20 border border-purple-500/30 rounded-lg p-3">
-                <p className="text-gray-300 text-xs mb-1">Monthly Payment</p>
+                <p className="text-gray-300 text-xs mb-1">الدفعة الشهرية</p>
                 <p className="text-xl font-bold text-purple-300">${(monthlyPayment / 1000).toFixed(1)}K</p>
               </div>
             </div>
@@ -260,14 +260,14 @@ export default function CarModal({ car, onClose, onAddToCart, onNavigateToChecko
               variant="outline"
               className="flex-1 border-purple-500/30 text-white hover:bg-slate-700 bg-transparent"
             >
-              Close
+              إغلاق
             </Button>
             <Button
               onClick={handleAddToCart}
               className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold flex items-center justify-center gap-2"
             >
               <ShoppingCart className="w-4 h-4" />
-              Add to Cart
+              أضف إلى السلة
             </Button>
           </div>
         </div>
